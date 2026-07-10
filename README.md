@@ -49,8 +49,8 @@ User
 
 数据库层还使用两个生成列：
 
-active_user_id
-active_station_id
+- active_user_id
+- active_station_id
 
 当订单状态为charging时，它们分别映射到用户和充电桩ID，再通过UNIQUE约束保证：
 
@@ -63,9 +63,11 @@ active_station_id
 
 结束充电的核心竞争主要集中在一条订单记录，因此采用：
 
+```text
 UPDATE ...
 WHERE charge_record_id = ?
 AND status = 'charging'
+```
 
 这样的条件更新。
 
@@ -123,12 +125,7 @@ Model保存业务对象的数据和一些只依赖自身状态的行为。
 
 # 本地运行
 
-我开发时使用的环境是：
-
-PHP 8.2
-MariaDB / MySQL
-Apache
-XAMPP
+我开发时使用的是PHP 8.2、MariaDB、Apache和XAMPP。
 
 1、 Clone 项目
 git clone <repository-url>
@@ -157,12 +154,12 @@ config/database.php
 
 项目优先读取以下环境变量：
 
-DB_HOST
-DB_PORT
-DB_DATABASE
-DB_USERNAME
-DB_PASSWORD
-DB_CHARSET
+- DB_HOST
+- DB_PORT
+- DB_DATABASE
+- DB_USERNAME
+- DB_PASSWORD
+- DB_CHARSET
 
 本地XAMPP环境也保留了开发用的默认配置。
 
@@ -184,9 +181,9 @@ php tests/run.php
 
 当前测试包括：
 
-31 个 Unit Test
-91 个 Feature Test
-122 个测试
+- 31个Unit Test
+- 91个Feature Test
+- 122个测试
 
 Feature Test使用独立的_test数据库，并在测试之间重建Schema，以减少测试数据互相影响。
 
@@ -195,6 +192,7 @@ Feature Test使用独立的_test数据库，并在测试之间重建Schema，以
 需要说明的是，当前测试主要验证顺序业务流程，还没有实现真正的双数据库连接并发测试，因此不能因为 122 个测试通过就认为所有并发场景都已经被实际模拟。
 
 # CLI工具
+
 tools/create_admin_user.php
 
 创建管理员账户。
@@ -234,9 +232,11 @@ admin_operation_logs
 两者用途不同：
 
 运行日志
+
 ——系统发生了什么
 
 管理员审计
+
 ——哪个管理员做了什么
 
 仓库中保留日志文件结构，但提交前会清空实际运行内容。

@@ -39,11 +39,7 @@
 - 充电桩处于可用状态；
 - 充电桩没有被其他订单占用。
 
-这些检查放在事务中执行，并按照：
-
-User
-→ Location
-→ Charging Station
+这些检查放在事务中执行，并按照 `User → Location → Charging Station` 的顺序加锁。
 
 的顺序加锁。
 
@@ -72,11 +68,7 @@ AND status = 'charging'
 
 ### 3、 订单保存费率快照
 
-订单开始时会保存：
-
-`hourly_rate_snapshot`
-
-而不是在结束时重新读取充电桩的当前价格。
+订单开始时会保存 `hourly_rate_snapshot`，而不是在结束时重新读取充电桩的当前价格。
 
 这样管理员后来调整费率时，只影响新的订单，不会改变已经开始或已经完成的订单结算结果。
 
@@ -92,8 +84,7 @@ AND status = 'charging'
 
 项目没有使用Laravel等PHP Web框架。
 
-目前的结构更接近：
-public页面入口  →  Service  →  Repository  →  MariaDB
+目前的结构更接近 `public 页面入口 → Service → Repository → MariaDB`。
 
 public下的PHP页面负责处理一次 HTTP 请求，包括参数读取、认证、CSRF、调用Service、Flash消息和跳转。
 
@@ -215,12 +206,8 @@ Feature Test使用独立的_test数据库，并在测试之间重建Schema，以
 
 两者用途不同：
 
-- 运行日志
-
-——系统发生了什么
-- 管理员审计
-
-——哪个管理员做了什么
+- 运行日志：系统发生了什么；
+- 管理员审计：哪个管理员做了什么。
 
 仓库中保留日志文件结构，但提交前会清空实际运行内容。
 

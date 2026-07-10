@@ -1,0 +1,419 @@
+.dashboard-admin .page,
+.dashboard-user .page {
+    max-width: 1200px;
+    padding: 32px 20px;
+}
+
+.welcome-card,
+.feature-card,
+.metric-card,
+.dash-panel {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+}
+
+.welcome-card {
+    margin-bottom: 24px;
+    padding: 24px;
+}
+
+.welcome-card h2 {
+    margin: 0 0 10px;
+}
+
+.welcome-card p {
+    margin: 0;
+    color: #607d8b;
+    line-height: 1.7;
+}
+
+.dash-heading {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: flex-end;
+    margin: 34px 0 18px;
+    padding-top: 28px;
+    border-top: 2px solid rgba(21, 101, 192, 0.38);
+}
+
+.dash-heading::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: 0;
+    width: 120px;
+    height: 2px;
+    border-radius: 999px;
+    background: #1565c0;
+}
+
+.welcome-card + .dash-heading {
+    margin-top: 30px;
+}
+
+.dash-heading h3 {
+    margin: 0 0 6px;
+    color: #263238;
+    font-size: 22px;
+}
+
+.dash-heading p {
+    margin: 0;
+    color: #607d8b;
+    font-size: 14px;
+}
+
+.feature-grid,
+.metric-grid,
+.dash-summary {
+    display: grid;
+    gap: 20px;
+    margin-bottom: 26px;
+}
+
+.feature-grid {
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.metric-grid {
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 16px;
+}
+
+.dash-summary {
+    grid-template-columns: minmax(260px, 0.85fr) minmax(360px, 1.15fr);
+}
+
+.feature-card {
+    padding: 22px;
+}
+
+.feature-card h3 {
+    margin: 0 0 12px;
+}
+
+.dashboard-admin .feature-card h3 {
+    color: #1565c0;
+}
+
+.dashboard-user .feature-card h3 {
+    color: #00897b;
+}
+
+.feature-card p {
+    margin: 0 0 18px;
+    color: #607d8b;
+    line-height: 1.7;
+}
+
+.feature-link {
+    display: inline-flex;
+    min-height: 36px;
+    padding: 0 13px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    background: #e3f2fd;
+    color: #1565c0;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.feature-link:hover {
+    background: #bbdefb;
+}
+
+.dashboard-user .feature-link {
+    background: #e0f2f1;
+    color: #00796b;
+}
+
+.dashboard-user .feature-link:hover {
+    background: #b2dfdb;
+}
+
+.metric-card {
+    padding: 18px;
+}
+
+.metric-strong {
+    background: #e3f2fd;
+}
+
+.metric-label {
+    display: block;
+    margin-bottom: 8px;
+    color: #607d8b;
+    font-size: 14px;
+}
+
+.metric-value {
+    display: block;
+    margin-bottom: 8px;
+    color: #1565c0;
+    font-size: 28px;
+    line-height: 1.2;
+}
+
+.metric-note {
+    color: #607d8b;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.dash-panel {
+    margin-bottom: 24px;
+    padding: 22px;
+}
+
+.dash-summary .dash-panel {
+    margin-bottom: 0;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 18px;
+    align-items: flex-start;
+}
+
+.panel-header h3 {
+    margin: 0;
+    color: #1565c0;
+}
+
+.panel-header span {
+    color: #607d8b;
+    font-size: 13px;
+}
+
+.status-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.status-list div {
+    padding: 14px;
+    border-radius: 10px;
+    background: #f5f7fa;
+}
+
+.status-list span {
+    display: block;
+    margin-bottom: 8px;
+    color: #607d8b;
+    font-size: 13px;
+}
+
+.status-list strong {
+    color: #263238;
+    font-size: 24px;
+}
+
+.trend-list,
+.ranking-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.trend-row,
+.ranking-row {
+    display: grid;
+    align-items: center;
+    gap: 12px;
+}
+
+.trend-row {
+    grid-template-columns: 92px 1fr 160px;
+}
+
+.ranking-row {
+    grid-template-columns: 34px 1fr 120px;
+}
+
+.trend-date,
+.trend-value,
+.ranking-value {
+    color: #455a64;
+    font-size: 13px;
+}
+
+.trend-value {
+    text-align: right;
+}
+
+.trend-track,
+.ranking-track {
+    height: 10px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: #eceff1;
+}
+
+.trend-bar,
+.ranking-bar {
+    height: 100%;
+    min-width: 4px;
+    border-radius: 999px;
+    background: #1565c0;
+}
+
+.rank-no {
+    display: inline-flex;
+    width: 28px;
+    height: 28px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 999px;
+    background: #e3f2fd;
+    color: #1565c0;
+    font-weight: bold;
+}
+
+.rank-title {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 8px;
+    color: #263238;
+    font-weight: bold;
+}
+
+.rank-title span {
+    color: #607d8b;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.ranking-value {
+    text-align: right;
+}
+
+.ranking-value strong,
+.ranking-value span {
+    display: block;
+}
+
+.ranking-value strong {
+    margin-bottom: 4px;
+    color: #1565c0;
+}
+
+.empty-dash {
+    margin: 0;
+    color: #607d8b;
+}
+
+.year-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 16px;
+    align-items: center;
+}
+
+.year-filter label {
+    color: #607d8b;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.year-filter select {
+    min-width: 120px;
+    padding: 8px 10px;
+    border: 1px solid #cfd8dc;
+    border-radius: 6px;
+    background: #fff;
+    color: #263238;
+}
+
+.year-filter button,
+.stat-export button {
+    display: inline-flex;
+    min-height: 38px;
+    padding: 0 16px;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.year-filter button {
+    background: #1565c0;
+}
+
+.year-filter button:hover {
+    background: #0d47a1;
+}
+
+.stat-export {
+    margin: 0;
+}
+
+.stat-export button {
+    background: #00897b;
+    white-space: nowrap;
+}
+
+.stat-export button:hover {
+    background: #00695c;
+}
+
+@media(max-width: 900px){
+    .dash-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .trend-row,
+    .ranking-row {
+        grid-template-columns: 1fr;
+    }
+
+    .trend-value,
+    .ranking-value {
+        text-align: left;
+    }
+
+    .rank-title {
+        display: block;
+    }
+
+    .rank-title span {
+        display: block;
+        margin-top: 4px;
+    }
+}
+
+@media(max-width: 760px){
+    .dash-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        margin-top: 24px;
+        padding-top: 18px;
+    }
+
+    .dash-heading h3 {
+        font-size: 20px;
+    }
+
+    .stat-export,
+    .stat-export button {
+        width: 100%;
+    }
+}
+
+@media(max-width: 560px){
+    .status-list {
+        grid-template-columns: 1fr;
+    }
+}

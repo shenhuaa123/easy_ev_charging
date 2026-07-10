@@ -1,0 +1,16 @@
+Options -Indexes
+DirectoryIndex index.php
+
+RewriteEngine On
+
+# 放行项目根目录请求，让Apache继续寻找DirectoryIndex
+RewriteRule ^$ - [L]
+
+# 放行项目根入口文件
+RewriteRule ^index\.php$ - [L]
+
+# 只允许通过HTTP访问public目录
+RewriteRule ^public(?:/|$) - [L]
+
+# 禁止通过HTTP直接访问其余内部文件和目录
+RewriteRule ^ - [F,L]

@@ -1,0 +1,146 @@
+.location-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.location-card,
+.empty-state,
+.initial-state {
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+}
+
+.location-card {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+}
+
+.location-name {
+    margin: 0 0 8px;
+    font-size: 21px;
+}
+
+.location-code {
+    margin: 0 0 16px;
+    color: #78909c;
+    font-size: 14px;
+}
+
+.location-info {
+    flex: 1;
+}
+
+.location-info p {
+    margin: 9px 0;
+    line-height: 1.6;
+}
+
+.available-count {
+    color: #2e7d32;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.unavailable-count {
+    color: #c62828;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.loc-rating {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+}
+
+.rating-stars {
+    color: #f9a825;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.rating-text {
+    color: #546e7a;
+    font-weight: bold;
+}
+
+.rating-empty {
+    color: #90a4ae;
+}
+
+.detail-button {
+    display: inline-flex;
+    min-height: 40px;
+    margin-top: 18px;
+    padding: 0 15px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    background: #1976d2;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.detail-button:hover {
+    background: #1565c0;
+}
+
+.secondary-link {
+    display: inline-flex;
+    min-height: 42px;
+    margin-top: 16px;
+    padding: 0 18px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    background: #eceff1;
+    color: #37474f;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.secondary-link:hover {
+    background: #cfd8dc;
+}
+
+.result-summary {
+    margin: 0 0 18px;
+    color: #546e7a;
+}
+
+.result-summary strong {
+    color: #1565c0;
+}
+
+.empty-state,
+.initial-state {
+    padding: 45px 22px;
+    color: #78909c;
+    text-align: center;
+}
+
+.empty-state h3,
+.initial-state h3 {
+    margin: 0 0 10px;
+    color: #546e7a;
+}
+
+.empty-state p,
+.initial-state p {
+    margin: 0;
+    line-height: 1.7;
+}
+
+@media(max-width: 760px){
+    .location-grid {
+        grid-template-columns: 1fr;
+    }
+}

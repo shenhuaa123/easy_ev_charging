@@ -155,7 +155,7 @@ git clone <repository-url>
 
 `php tests/run.php`
 
-当前共有 122 个测试：
+当前共有122个测试：
 
 - 31个Unit Test；
 - 91个Feature Test。

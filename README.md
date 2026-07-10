@@ -98,12 +98,7 @@ hourly_rate_snapshot
 目前的结构更接近：
 
 public 页面入口
-→       
-Service
-→  
-Repository
-→ 
-MariaDB
+→  Service  →  Repository  →  MariaDB
 
 public下的PHP页面负责处理一次 HTTP 请求，包括参数读取、认证、CSRF、调用Service、Flash消息和跳转。
 

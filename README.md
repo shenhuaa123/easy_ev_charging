@@ -41,11 +41,9 @@
 
 这些检查放在事务中执行，并按照 `User → Location → Charging Station` 的顺序加锁。
 
-的顺序加锁。
-
 数据库层还使用了 `active_user_id` 和 `active_station_id` 两个生成列。
 
-当订单状态为charging时，它们分别映射到用户和充电桩ID，再通过UNIQUE约束保证：
+当订单状态为 `charging` 时，它们分别映射到用户和充电桩 ID，再通过 `UNIQUE` 约束保证：
 
 - 同一个用户最多只有一条进行中订单；
 - 同一个充电桩最多只有一条进行中订单。
@@ -86,7 +84,7 @@ AND status = 'charging'
 
 目前的结构更接近 `public 页面入口 → Service → Repository → MariaDB`。
 
-public下的PHP页面负责处理一次 HTTP 请求，包括参数读取、认证、CSRF、调用Service、Flash消息和跳转。
+`public` 下的PHP页面负责处理一次 HTTP 请求，包括参数读取、认证、CSRF、调用Service、Flash消息和跳转。
 
 Service负责业务规则、事务和跨Repository协调。
 
@@ -94,7 +92,7 @@ Repository负责SQL、Prepared Statement、数据查询和对象映射。
 
 Model保存业务对象的数据和一些只依赖自身状态的行为。
 
-另外，app/Core中放置了一些基础功能。
+另外，`app/Core` 中放置了一些基础功能。
 
 这套结构不是完整的MVC框架，并没采用严格正式的架构。它只是我在这个项目规模下逐步形成的一套原生PHP分层方式。
 
@@ -102,8 +100,11 @@ Model保存业务对象的数据和一些只依赖自身状态的行为。
 
 我开发时使用的是PHP 8.2、MariaDB、Apache和XAMPP。
 
-### 1、 Clone 项目
+### 1、Clone项目
+
+```bash
 git clone <repository-url>
+```
 
 把项目放到Web Server可以访问的目录中。
 
@@ -154,17 +155,16 @@ git clone <repository-url>
 
 `php tests/run.php`
 
-当前测试包括：
+当前共有 122 个测试：
 
-- 31个Unit Test
-- 91个Feature Test
-- 122个测试
+- 31个Unit Test；
+- 91个Feature Test。
 
 Feature Test使用独立的_test数据库，并在测试之间重建Schema，以减少测试数据互相影响。
 
 这些测试覆盖了认证、用户管理、充电流程、站点和设备状态、评价、登录限流、查询以及管理员操作日志等部分。
 
-需要说明的是，当前测试主要验证顺序业务流程，还没有实现真正的双数据库连接并发测试，因此不能因为 122 个测试通过就认为所有并发场景都已经被实际模拟。
+需要说明的是，当前测试主要验证顺序业务流程，还没有实现真正的双数据库连接并发测试，因此不能因为122个测试通过就认为所有并发场景都已经被实际模拟。
 
 ## CLI工具
 

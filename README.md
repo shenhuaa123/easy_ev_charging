@@ -74,7 +74,7 @@ AND status = 'charging'
 
 订单开始时会保存：
 
-hourly_rate_snapshot
+`hourly_rate_snapshot`
 
 而不是在结束时重新读取充电桩的当前价格。
 
@@ -93,7 +93,7 @@ hourly_rate_snapshot
 项目没有使用Laravel等PHP Web框架。
 
 目前的结构更接近：
-public 页面入口  →  Service  →  Repository  →  MariaDB
+public页面入口  →  Service  →  Repository  →  MariaDB
 
 public下的PHP页面负责处理一次 HTTP 请求，包括参数读取、认证、CSRF、调用Service、Flash消息和跳转。
 
@@ -118,23 +118,23 @@ git clone <repository-url>
 
 例如 XAMPP：
 
-htdocs/easy_ev_charging
+`htdocs/easy_ev_charging`
 
 ### 2、 创建数据库
 
 执行：
 
-database/easy_ev_charging_system_schema.sql
+`database/easy_ev_charging_system_schema.sql`
 
 如需演示数据，再执行：
 
-database/easy_ev_charging_system_demo_data.sql
+`database/easy_ev_charging_system_demo_data.sql`
 
 ### 3、 数据库配置
 
 默认数据库配置位于：
 
-config/database.php
+`config/database.php`
 
 项目优先读取以下环境变量：
 
@@ -153,7 +153,7 @@ config/database.php
 
 可以在命令行运行：
 
-php tools/create_admin_user.php
+`php tools/create_admin_user.php`
 
 按照提示创建管理员账号。
 
@@ -161,7 +161,7 @@ php tools/create_admin_user.php
 
 运行全部测试：
 
-php tests/run.php
+`php tests/run.php`
 
 当前测试包括：
 
@@ -177,19 +177,19 @@ Feature Test使用独立的_test数据库，并在测试之间重建Schema，以
 
 ## CLI工具
 
-tools/create_admin_user.php
+`tools/create_admin_user.php`
 
 创建管理员账户。
 
-tools/generate_password_hash.php
+`tools/generate_password_hash.php`
 
 单独生成PHP Password Hash。
 
-tools/clear_logs.php
+`tools/clear_logs.php`
 
 清理运行日志或测试日志，也可以按时间保留最近的日志。
 
-tools/generate_final_report.php
+`tools/generate_final_report.php`
 
 运行项目最终检查并生成Markdown报告。
 
@@ -201,7 +201,7 @@ tools/generate_final_report.php
 
 运行日志位于：
 
-storage/logs/
+`storage/logs/`
 
 分为：
 
@@ -211,7 +211,7 @@ storage/logs/
 
 另外，管理员业务操作记录保存在数据库表：
 
-admin_operation_logs
+`admin_operation_logs`
 
 两者用途不同：
 

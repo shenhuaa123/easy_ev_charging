@@ -184,6 +184,10 @@ Feature Test使用独立的_test数据库，并在测试之间重建Schema，以
 
 运行项目最终检查并生成Markdown报告。
 
+`tools/clear_reports.php`
+
+清理Markdown报告。
+
 最终检查除了运行测试外，还会检查PHP和JS语法、部分CSRF覆盖、数据库表、SQL直接调用位置、CSS Class使用候选以及一些关键安全和业务规则。
 
 它只是一个针对这个项目写的检查工具，不是通用静态分析器或安全扫描器。
